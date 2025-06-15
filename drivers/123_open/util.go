@@ -16,6 +16,7 @@ var ( //不同情况下获取的AccessTokenQPS限制不同 如下模块化易于
 	Api = "https://open-api.123pan.com"
 
 	AccessToken    = InitApiInfo(Api+"/api/v1/access_token", 1)
+	RefreshToken   = InitApiInfo(Api+"/api/v1/oauth2/access_token", 1)
 	UserInfo       = InitApiInfo(Api+"/api/v1/user/info", 1)
 	FileList       = InitApiInfo(Api+"/api/v2/file/list", 4)
 	DownloadInfo   = InitApiInfo(Api+"/api/v1/file/download_info", 0)
