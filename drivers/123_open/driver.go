@@ -7,6 +7,7 @@ import (
 	"github.com/OpenListTeam/OpenList/internal/driver"
 	"github.com/OpenListTeam/OpenList/internal/errs"
 	"github.com/OpenListTeam/OpenList/internal/model"
+	"github.com/OpenListTeam/OpenList/internal/op"
 	"github.com/OpenListTeam/OpenList/internal/stream"
 	"github.com/OpenListTeam/OpenList/pkg/utils"
 )
