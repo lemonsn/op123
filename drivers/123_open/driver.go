@@ -34,6 +34,7 @@ func (d *Open123) Init(ctx context.Context) error {
 }
 
 func (d *Open123) Drop(ctx context.Context) error {
+	op.MustSaveDriverStorage(d)
 	return nil
 }
 
