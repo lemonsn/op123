@@ -68,7 +68,9 @@ func (d *Open123) Request(apiInfo *ApiInfo, method string, callback base.ReqCall
 			return body, nil
 		} else if baseResp.Code == 401 && retryToken {
 			retryToken = false
-			continue
+			if err := d.flushAccessToken(); err != nil {
+				return nil, err
+			}
 		} else if baseResp.Code == 429 {
 			time.Sleep(500 * time.Millisecond)
 			log.Warningf("API: %s, QPS: %d, 请求太频繁，对应API提示过多请减小QPS", apiInfo.url, apiInfo.qps)
