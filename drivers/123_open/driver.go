@@ -58,7 +58,6 @@ func (d *Open123) List(ctx context.Context, dir model.Obj, args model.ListArgs) 
 			}
 		}
 		fileLastId = files.Data.LastFileId
-
 	}
 	return utils.SliceConvert(res, func(src File) (model.Obj, error) {
 		return src, nil

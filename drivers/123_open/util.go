@@ -89,7 +89,6 @@ func (d *Open123) flushAccessToken() error {
 					"clientSecret": d.ClientSecret,
 				})
 			}, &resp)
-			fmt.Println(resp)
 			if err != nil {
 				return err
 			}
@@ -102,7 +101,6 @@ func (d *Open123) flushAccessToken() error {
 				req.SetQueryParam("grant_type", "refresh_token")
 				req.SetQueryParam("refresh_token", d.Addition.RefreshToken)
 			}, &resp)
-			fmt.Println(resp)
 			if err != nil {
 				return err
 			}

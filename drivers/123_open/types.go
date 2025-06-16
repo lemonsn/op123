@@ -21,7 +21,7 @@ func (a *ApiInfo) Require() {
 }
 func (a *ApiInfo) Release() {
 	if a.qps > 0 {
-		time.AfterFunc(time.Duration(1.0/float32(a.qps)*1000)*time.Millisecond, func() {
+		time.AfterFunc(time.Second, func() {
 			<-a.token
 		})
 	}
